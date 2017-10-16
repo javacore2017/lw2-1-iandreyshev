@@ -9,15 +9,24 @@ public class Logger {
         System.out.printf("[%s] %s\n", date.toString(), message);
     }
 
-    public static void Product(Product product, Float mass) {
+    public static void Product(Product product, Number amount) {
         String name = product.getName();
         String cost = product.getCost().toString();
-        System.out.printf("Product: [name: %s, cost: %s, mass: %s]\n", name, cost, mass);
+        String amountName = "";
+
+        switch (product.getType()) {
+            case Mass:
+                amountName = MASS_AMOUNT_NAME;
+                break;
+            case Count:
+                amountName = COUNT_AMOUNT_NAME;
+                break;
+        }
+
+        System.out.printf("Product: [name: %s, cost: %s, " +
+                amountName + ": %s]\n", name, cost, amount);
     }
 
-    public static void Product(Product product, Integer count) {
-        String name = product.getName();
-        String cost = product.getCost().toString();
-        System.out.printf("Product: [name: %s, cost: %s, mass: %s]\n", name, cost, count);
-    }
+    private static final String COUNT_AMOUNT_NAME = "count";
+    private static final String MASS_AMOUNT_NAME = "mass";
 }

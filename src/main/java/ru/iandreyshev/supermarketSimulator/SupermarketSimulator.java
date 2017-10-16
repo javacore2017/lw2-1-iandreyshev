@@ -1,8 +1,5 @@
 package ru.iandreyshev.supermarketSimulator;
 
-import ru.iandreyshev.util.Logger;
-import ru.iandreyshev.util.StringTool;
-
 import java.io.*;
 import java.util.*;
 
@@ -11,7 +8,7 @@ class SupermarketSimulator {
         try {
             long workTime = getWorkTimeInMinutesFromArgs(args);
             m_supermarket = new Supermarket(START_DATE);
-            initProducts();
+            addProducts();
             m_supermarket.startWork(workTime);
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -52,7 +49,7 @@ class SupermarketSimulator {
         return result;
     }
 
-    private static void initProducts() throws FileNotFoundException, IOException {
+    private static void addProducts() throws FileNotFoundException, IOException {
         FileReader fReader = new FileReader(PRODUCTS_FILE);
         BufferedReader bReader = new BufferedReader(fReader);
         String record;
@@ -61,10 +58,6 @@ class SupermarketSimulator {
             String[] productFields = record.split(DELIMITER);
             if (productFields.length < PRODUCT_FIELDS_COUNT) {
                 throw new InvalidPropertiesFormatException("Invalid record");
-            }
-
-            for (String field : productFields) {
-                StringTool.argClear(field);
             }
 
             Product product = createProduct(productFields);
