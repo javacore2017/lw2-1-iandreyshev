@@ -14,10 +14,10 @@ public class ProductContainer {
         Number newAmount = 0;
 
         switch (product.getType()) {
-            case Count:
+            case COUNT:
                 newAmount = currAmount.intValue() + amount.intValue();
                 break;
-            case Mass:
+            case MASS:
                 newAmount = currAmount.floatValue() + amount.floatValue();
                 break;
         }
@@ -30,14 +30,14 @@ public class ProductContainer {
         Number removedAmount = amountToRemove;
 
         switch (product.getType()) {
-            case Count:
+            case COUNT:
                 if (currAmount.intValue() > amountToRemove.intValue()) {
                     removedAmount = currAmount;
                     m_container.remove(product);
                     break;
                 }
                 m_container.put(product, currAmount.intValue() - amountToRemove.intValue());
-            case Mass:
+            case MASS:
                 if (currAmount.floatValue() <= amountToRemove.floatValue()) {
                     removedAmount = currAmount;
                     m_container.remove(product);
@@ -53,7 +53,7 @@ public class ProductContainer {
         return m_container.size();
     }
 
-    public Set<Map.Entry<Product, Number>> getEntrySet() {
+    public Set<Map.Entry<Product, Number>> entrySet() {
         return m_container.entrySet();
     }
 

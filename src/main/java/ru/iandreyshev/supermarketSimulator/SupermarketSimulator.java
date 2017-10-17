@@ -1,15 +1,19 @@
 package ru.iandreyshev.supermarketSimulator;
 
+import javafx.util.Pair;
+import ru.iandreyshev.util.Logger;
+import ru.iandreyshev.util.Rand;
+
 import java.io.*;
 import java.util.*;
 
 class SupermarketSimulator {
     public static void main(String[] args) {
         try {
-            long workTime = getWorkTimeInMinutesFromArgs(args);
-            m_supermarket = new Supermarket(START_DATE);
-            addProducts();
-            m_supermarket.startWork(workTime);
+            m_workTime = getWorkTime(args);
+            createSupermarket();
+            createCustomersPlan();
+            enterProcess();
         } catch (Exception e) {
             System.out.println(e.getMessage());
             System.exit(EXIT_FAILURE);
@@ -18,72 +22,92 @@ class SupermarketSimulator {
     }
 
     private static final int ARGUMENTS_COUNT = 1;
-    private static final int PRODUCT_FIELDS_COUNT = 4;
     private static final long MIN_WORK_TIME = 0;
     private static final Date START_DATE = new Date(1483218000000L);
     private static final String PRODUCTS_FILE = "./resources/products.csv";
-    private static final String DELIMITER = ";";
     private static final int EXIT_SUCCESS = 0;
     private static final int EXIT_FAILURE = 1;
+    private static final int MAX_CUSTOMERS_COUNT = 100;
 
     private static Supermarket m_supermarket;
+    private static HashSet<Customer> m_customers;
+    private static CustomerPlan m_customersPlan;
+    private static int m_workTime;
 
-    private static long getWorkTimeInMinutesFromArgs(String[] args) {
+    private static int getWorkTime(String[] args) {
         if (args.length < ARGUMENTS_COUNT) {
             throw new IllegalArgumentException(
                     "Invalid arguments count.\n" +
                             "Use: SupermarketSimulator <work time in minutes>");
         }
 
-        long result;
+        int result;
 
         try {
-            result = Long.parseUnsignedLong(args[0]);
+            result = Integer.parseUnsignedInt(args[0]);
         } catch (Exception e) {
             throw new IllegalArgumentException(
-                    "Work time must be in the range" +
-                            "from " + MIN_WORK_TIME +
+                    "Work time must be in the range from " + MIN_WORK_TIME +
                             " to " + Integer.MAX_VALUE);
         }
 
         return result;
     }
 
-    private static void addProducts() throws FileNotFoundException, IOException {
-        FileReader fReader = new FileReader(PRODUCTS_FILE);
-        BufferedReader bReader = new BufferedReader(fReader);
-        String record;
+    private static void createSupermarket() throws IOException {
+        m_supermarket = new Supermarket(START_DATE);
+        ProductReader reader = new ProductReader(PRODUCTS_FILE);
+        HashSet<SupermarketProduct> products = reader.readAllProducts();
+        for (SupermarketProduct product : products) {
+            m_supermarket.addProduct(product);
+        }
+        m_supermarket.startWork(m_workTime);
+    }
 
-        while ((record = bReader.readLine()) != null) {
-            String[] productFields = record.split(DELIMITER);
-            if (productFields.length < PRODUCT_FIELDS_COUNT) {
-                throw new InvalidPropertiesFormatException("Invalid record");
-            }
+    private static void createCustomersPlan() {
+        m_customers = new HashSet<>();
+        m_customersPlan = new CustomerPlan();
+        int customersCount = Rand.getInt(MAX_CUSTOMERS_COUNT);
 
-            Product product = createProduct(productFields);
+        for (Integer i = 0; i < customersCount; ++i) {
+            String name = "Customer #" + i.toString();
+            Customer customer = new Customer(name);
+            m_customers.add(customer);
+            int currentTime = 0;
 
-            if (product.getType() == ProductType.Count) {
-                Integer count = getProductCount(productFields[3]);
-                m_supermarket.addProduct(product, count);
-            } else if (product.getType() == ProductType.Mass) {
-                Float mass = getProductMass(productFields[3]);
-                m_supermarket.addProduct(product, mass);
+            while (currentTime < m_workTime) {
+                int timeOffset = Rand.getInt(m_workTime);
+                boolean isTimeLeft = m_workTime - timeOffset < currentTime;
+                currentTime = (isTimeLeft) ? m_workTime : currentTime + timeOffset;
+                ArrayList<Pair<Customer, CustomerBehaviourType>> planAtTime =
+                        m_customersPlan.getOrDefault(currentTime, new ArrayList<>());
+                planAtTime.add(new Pair<>(customer, CustomerBehaviourType.ARRIVE));
+                m_customersPlan.put(currentTime, planAtTime);
+
+                timeOffset = Rand.getInt(m_workTime);
+                isTimeLeft = m_workTime - timeOffset < currentTime;
+                currentTime = (isTimeLeft) ? m_workTime : currentTime + timeOffset;
+                planAtTime = m_customersPlan.getOrDefault(currentTime, new ArrayList<>());
+                planAtTime.add(new Pair<>(customer, CustomerBehaviourType.PAID));
+                m_customersPlan.put(currentTime, planAtTime);
             }
         }
     }
 
-    private static Product createProduct(String[] fields) {
-        String name = fields[0];
-        ProductType type = ProductType.valueOf(fields[1]);
-        int cost = Integer.parseUnsignedInt(fields[2]);
-        return new Product(type, name, cost);
+    private static void processCustomer(Date date, Customer customer, CustomerBehaviourType behaviour) {
+        if (behaviour == CustomerBehaviourType.ARRIVE) {
+            Logger.CustomerArrived(date, customer.getName());
+        }
     }
 
-    private static Float getProductMass(String massStr) {
-        return Float.parseFloat(massStr);
-    }
-
-    private static Integer getProductCount(String countStr) {
-        return Integer.parseUnsignedInt(countStr);
+    private static void enterProcess() throws IOException {
+        for (Map.Entry<Integer, ArrayList<Pair<Customer, CustomerBehaviourType>>>
+                plansList : m_customersPlan.entrySet()) {
+            for (Pair<Customer, CustomerBehaviourType> plan : plansList.getValue()) {
+                Date currentDate = m_supermarket.getStartDate();
+                currentDate.setTime(plansList.getKey());
+                processCustomer(currentDate, plan.getKey(), plan.getValue());
+            }
+        }
     }
 }

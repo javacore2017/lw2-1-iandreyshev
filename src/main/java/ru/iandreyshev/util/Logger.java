@@ -13,18 +13,24 @@ public class Logger {
         String name = product.getName();
         String cost = product.getCost().toString();
         String amountName = "";
+        String adultsOnly = product.isAdultOnly().toString();
 
         switch (product.getType()) {
-            case Mass:
+            case MASS:
                 amountName = MASS_AMOUNT_NAME;
                 break;
-            case Count:
+            case COUNT:
                 amountName = COUNT_AMOUNT_NAME;
                 break;
         }
 
         System.out.printf("Product: [name: %s, cost: %s, " +
-                amountName + ": %s]\n", name, cost, amount);
+                amountName + ": %s, adults only: %s]\n", name, cost, amount, adultsOnly);
+    }
+
+    public static void CustomerArrived(Date date, String name) {
+        String message = "New customer '" + name + "' arrived";
+        Message(date, message);
     }
 
     private static final String COUNT_AMOUNT_NAME = "count";
