@@ -11,7 +11,7 @@ class SupermarketSimulator {
     public static void main(String[] args) {
         try {
             m_workTime = getWorkTime(args);
-            createActionsTimeline();
+            createActions();
             createSupermarket();
             enterSimulate();
         } catch (Exception e) {
@@ -24,13 +24,15 @@ class SupermarketSimulator {
     private static final int ARGUMENTS_COUNT = 1;
     private static final Date START_DATE = new Date(1483218000000L);
     private static final Long MAX_WORK_TIME = (long) Integer.MAX_VALUE;
+    private static final int MIN_ACTIONS_COUNT = 2;
+    private static final int MAX_ACTIONS_COUNT = 20;
+    private static final int MAX_CUSTOMERS_COUNT = 50;
     private static final String PRODUCTS_FILE = "./resources/products.csv";
     private static final int EXIT_SUCCESS = 0;
     private static final int EXIT_FAILURE = 1;
-    private static final int MAX_CUSTOMERS_COUNT = 100;
 
     private static Supermarket m_supermarket;
-    private static ActionsTimeline m_customersPlan;
+    private static ActionsTimeline m_timeline;
     private static int m_workTime;
 
     private static int getWorkTime(String[] args) {
@@ -71,27 +73,25 @@ class SupermarketSimulator {
         }
     }
 
-    private static void createActionsTimeline() {
-        m_customersPlan = new ActionsTimeline();
+    private static void createActions() {
+        m_timeline = new ActionsTimeline();
         int customersCount = Rand.getInt(MAX_CUSTOMERS_COUNT);
 
-        for (Integer i = 0; i < customersCount; ++i) {
-            String name = "Customer #" + (i + 1);
+        for (Integer i = 1; i <= customersCount; ++i) {
+            String name = "Customer #" + i;
             Customer customer = new Customer(name);
-            long timeFromStart = 0;
+            int actionsCount = Rand.getInt(MIN_ACTIONS_COUNT, MAX_ACTIONS_COUNT);
+            int[] actionTimes = Rand.getInt(0, m_workTime, actionsCount);
 
-            while (timeFromStart < m_workTime) {
-                int offset = Rand.getInt(m_workTime);
-                boolean isTimeLeft = m_workTime - offset < timeFromStart;
-                timeFromStart = (isTimeLeft) ? m_workTime : timeFromStart + offset;
-                Date actionTime = new Date(timeFromStart + START_DATE.getTime());
-                m_customersPlan.addAction(actionTime, customer, ActionType.ARRIVE);
-
-                offset = Rand.getInt(m_workTime);
-                isTimeLeft = m_workTime - offset < timeFromStart;
-                timeFromStart = (isTimeLeft) ? m_workTime : timeFromStart + offset;
-                actionTime = new Date(timeFromStart + START_DATE.getTime());
-                m_customersPlan.addAction(actionTime, customer, ActionType.ARRIVE);
+            for (int j = 0; j < actionTimes.length; ++j) {
+                Date time = new Date(actionTimes[j] + START_DATE.getTime());
+                ActionType action = ActionType.TAKE_PRODUCT;
+                if (j == 0) {
+                    action = ActionType.ARRIVE;
+                } else if (j == actionTimes.length - 1) {
+                    action = ActionType.PAID;
+                }
+                m_timeline.addAction(time, customer, action);
             }
         }
     }
@@ -104,7 +104,7 @@ class SupermarketSimulator {
 
         Logger.Message(START_DATE, "Supermarket is opened");
 
-        for (Map.Entry<Date, ArrayList<Pair<Customer, ActionType>>> plansAtTime : m_customersPlan.entrySet()) {
+        for (Map.Entry<Date, ArrayList<Pair<Customer, ActionType>>> plansAtTime : m_timeline.entrySet()) {
             for (Pair<Customer, ActionType> plan : plansAtTime.getValue()) {
                 Date currDate = plansAtTime.getKey();
                 Customer customer = plan.getKey();
@@ -115,6 +115,9 @@ class SupermarketSimulator {
                         break;
                     case PAID:
                         processPaid(currDate, customer);
+                        break;
+                    case TAKE_PRODUCT:
+                        processTake(currDate, customer);
                         break;
                 }
 
@@ -133,7 +136,13 @@ class SupermarketSimulator {
         Logger.CustomerArrived(date, customer.getName());
     }
 
+    private static void processTake(Date date, Customer customer) {
+        Set<SupermarketProduct> prods = m_supermarket.getProductsSet();
+        Logger.TakeProduct(date, customer.getName(), prods.iterator().next(), 12);
+    }
+
     private static void processPaid(Date date, Customer customer) {
+        /*
         Set<SupermarketProduct> productsSet = m_supermarket.getProductsSet();
         Basket basket = customer.selectProducts(productsSet);
         Logger.Basket(date, basket);
@@ -144,6 +153,6 @@ class SupermarketSimulator {
                 customer.getMoney(),
                 date
         );
-        Logger.Bill(date, bill);
+        Logger.Bill(date, bill);*/
     }
 }

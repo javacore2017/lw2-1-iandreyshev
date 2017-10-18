@@ -17,6 +17,14 @@ public class Rand {
         return getRand().nextInt((max - min) + 1) + min;
     }
 
+    public static int[] getInt(int min, int max, int count) {
+        int[] result = new int[count];
+        for (int i = 0; i < result.length; ++i) {
+            result[i] = getInt(min, max);
+        }
+        return result;
+    }
+
     public static Random getRand() {
         long currTime = Calendar.getInstance().getTimeInMillis();
         return new Random(currTime);
