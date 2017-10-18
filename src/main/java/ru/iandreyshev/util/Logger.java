@@ -1,6 +1,7 @@
 package ru.iandreyshev.util;
 
 import ru.iandreyshev.supermarketSimulator.Product;
+import ru.iandreyshev.supermarketSimulator.SupermarketProduct;
 
 import java.util.Date;
 
@@ -9,7 +10,7 @@ public class Logger {
         System.out.printf("[%s] %s\n", date.toString(), message);
     }
 
-    public static void Product(Product product, Number amount) {
+    public static void Product(SupermarketProduct product, Number amount) {
         String name = product.getName();
         String cost = product.getCost().toString();
         String amountName = "";

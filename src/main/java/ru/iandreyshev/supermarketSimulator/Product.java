@@ -1,11 +1,16 @@
 package ru.iandreyshev.supermarketSimulator;
 
 public class Product {
-    public Product(ProductType type, String name, int cost, boolean isAdultOnly) {
+    public Product(ProductType type, String name, boolean isAdultOnly) {
         m_type = type;
         m_name = name;
-        m_cost = cost;
         m_isAdultOnly = isAdultOnly;
+    }
+
+    public Product(Product instance) {
+        m_type = instance.m_type;
+        m_name = instance.m_name;
+        m_isAdultOnly = instance.m_isAdultOnly;
     }
 
     public ProductType getType() {
@@ -16,16 +21,11 @@ public class Product {
         return m_name;
     }
 
-    public Integer getCost() {
-        return m_cost;
-    }
-
     public Boolean isAdultOnly() {
         return m_isAdultOnly;
     }
 
     private ProductType m_type;
     private String m_name;
-    private int m_cost;
-    private Boolean m_isAdultOnly;
+    private boolean m_isAdultOnly;
 }

@@ -1,22 +1,23 @@
 package ru.iandreyshev.supermarketSimulator;
 
-public class SupermarketProduct {
-    public SupermarketProduct(Product product, Number amount, Integer bonus) {
+public class SupermarketProduct extends Product {
+    public SupermarketProduct(Product product, int cost, int bonus) {
+        super(product);
         m_product = product;
-        m_amount = amount;
+        m_cost = cost;
         m_bonus = bonus;
+    }
+
+    public Integer getCost() {
+        return m_cost;
     }
 
     public Integer getBonus() {
         return m_bonus;
     }
 
-    public Integer getBonusToAmount(Number amount) {
+    public Integer getBonus(Number amount) {
         return (int) (m_bonus * amount.floatValue());
-    }
-
-    public Number getAmount() {
-        return m_amount;
     }
 
     public Product getProduct() {
@@ -24,6 +25,6 @@ public class SupermarketProduct {
     }
 
     private Product m_product;
-    private Number m_amount;
-    private Integer m_bonus;
+    private int m_cost;
+    private int m_bonus;
 }

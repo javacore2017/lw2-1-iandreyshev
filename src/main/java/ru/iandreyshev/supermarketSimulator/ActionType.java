@@ -1,6 +1,6 @@
 package ru.iandreyshev.supermarketSimulator;
 
-public enum CustomerBehaviourType {
+public enum ActionType {
     ARRIVE,
     PAID
 }

@@ -17,7 +17,7 @@ public class Rand {
         return getRand().nextInt((max - min) + 1) + min;
     }
 
-    private static Random getRand() {
+    public static Random getRand() {
         long currTime = Calendar.getInstance().getTimeInMillis();
         return new Random(currTime);
     }

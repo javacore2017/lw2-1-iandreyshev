@@ -1,12 +1,12 @@
 package ru.iandreyshev.supermarketSimulator;
 
 public class Util {
-    public static int calcCost(Product product, Number amount) {
-        switch (product.getType()) {
+    public static int calcCost(ProductType type, int cost, Number amount) {
+        switch (type) {
             case COUNT:
-                return product.getCost() * amount.intValue();
+                return cost * amount.intValue();
             case MASS:
-                return (int)(product.getCost() * amount.floatValue());
+                return (int)(cost * amount.floatValue());
         }
         return 0;
     }

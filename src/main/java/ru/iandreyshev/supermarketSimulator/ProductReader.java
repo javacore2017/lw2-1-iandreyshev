@@ -1,9 +1,12 @@
 package ru.iandreyshev.supermarketSimulator;
 
+import javafx.util.Pair;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.InvalidPropertiesFormatException;
 
@@ -25,8 +28,8 @@ public class ProductReader {
         m_isOpen = true;
     }
 
-    public HashSet<SupermarketProduct> readAllProducts() throws IOException {
-        HashSet<SupermarketProduct> result = new HashSet<>();
+    public HashMap<SupermarketProduct, Number> readAllProducts() throws IOException {
+        HashMap<SupermarketProduct, Number> result = new HashMap<>();
         String record;
 
         while ((record = m_bReader.readLine()) != null) {
@@ -40,7 +43,8 @@ public class ProductReader {
                         "Invalid product record format");
             }
 
-            result.add(createProduct(fields));
+            Pair<SupermarketProduct, Number> product = createProduct(fields);
+            result.put(product.getKey(), product.getValue());
         }
 
         return result;
@@ -58,7 +62,7 @@ public class ProductReader {
     private FileReader m_fReader;
     private BufferedReader m_bReader;
 
-    private SupermarketProduct createProduct(String[] fields) {
+    private Pair<SupermarketProduct, Number> createProduct(String[] fields) {
         String name = fields[0];
         ProductType type = ProductType.valueOf(fields[1]);
         int cost = Integer.parseUnsignedInt(fields[2]);
@@ -66,8 +70,8 @@ public class ProductReader {
         Number amount = getProductAmount(type, fields[4]);
         Integer bonus = Integer.parseUnsignedInt(fields[5]);
 
-        Product product = new Product(type, name, cost, isAdultOnly);
-        return new SupermarketProduct(product, amount, bonus);
+        Product product = new Product(type, name, isAdultOnly);
+        return new Pair<>(new SupermarketProduct(product, cost, bonus), amount);
     }
 
     private Number getProductAmount(ProductType type, String amountStr) {
