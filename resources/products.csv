@@ -1,4 +1,4 @@
 # [Name];[Amount type];[Cost];[Is adults only];[Amount];[Bonuses]
-Potato;COUNT;100;false;100;0
-Topato;MASS;25;false;15.5;0
-Cola;COUNT;15;true;100;0
+Potato;COUNT;25;false;50;5
+Tomato;MASS;75;false;10.55;0
+Cola;COUNT;35;true;50;10

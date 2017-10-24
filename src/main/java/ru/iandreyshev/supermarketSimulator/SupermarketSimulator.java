@@ -1,8 +1,17 @@
 package ru.iandreyshev.supermarketSimulator;
 
 import javafx.util.Pair;
-import ru.iandreyshev.util.Logger;
-import ru.iandreyshev.util.Rand;
+import ru.iandreyshev.supermarketSimulator.action.ActionType;
+import ru.iandreyshev.supermarketSimulator.action.ActionsTimeline;
+import ru.iandreyshev.supermarketSimulator.bill.Bill;
+import ru.iandreyshev.supermarketSimulator.customer.Customer;
+import ru.iandreyshev.supermarketSimulator.product.Basket;
+import ru.iandreyshev.supermarketSimulator.product.Product;
+import ru.iandreyshev.supermarketSimulator.product.ProductReader;
+import ru.iandreyshev.supermarketSimulator.product.SupermarketProduct;
+import ru.iandreyshev.supermarketSimulator.supermarket.Supermarket;
+import ru.iandreyshev.supermarketSimulator.util.Logger;
+import ru.iandreyshev.supermarketSimulator.util.Rand;
 
 import java.io.*;
 import java.util.*;
@@ -10,10 +19,11 @@ import java.util.*;
 class SupermarketSimulator {
     public static void main(String[] args) {
         try {
-            m_workTime = getWorkTime(args);
+            workTime = getWorkTime(args);
             createActions();
             createSupermarket();
             enterSimulate();
+            writeReport();
         } catch (Exception e) {
             System.out.println(e.getMessage());
             System.exit(EXIT_FAILURE);
@@ -26,19 +36,21 @@ class SupermarketSimulator {
     private static final Long MAX_WORK_TIME = (long) Integer.MAX_VALUE;
     private static final int MIN_ACTIONS_COUNT = 2;
     private static final int MAX_ACTIONS_COUNT = 20;
+    private static final int MIN_ACTION_PAUSE = 120;
     private static final int MAX_CUSTOMERS_COUNT = 50;
     private static final String PRODUCTS_FILE = "./resources/products.csv";
+    private static final String CUSTOMER_NAME_PATTERN = "Customer #";
     private static final int EXIT_SUCCESS = 0;
     private static final int EXIT_FAILURE = 1;
 
-    private static Supermarket m_supermarket;
-    private static ActionsTimeline m_timeline;
-    private static int m_workTime;
+    private static Supermarket supermarket;
+    private static ActionsTimeline timeline;
+    private static int workTime;
 
     private static int getWorkTime(String[] args) {
         if (args.length < ARGUMENTS_COUNT) {
             throw new IllegalArgumentException(
-                    "Invalid arguments count.\nUse: SupermarketSimulator <work time in minutes>");
+                    "Invalid arguments count.\nUse: SupermarketSimulator <work time in seconds>");
         }
 
         int result;
@@ -54,57 +66,52 @@ class SupermarketSimulator {
     }
 
     private static void createSupermarket() throws IOException {
-        m_supermarket = new Supermarket();
+        supermarket = new Supermarket();
         ProductReader reader = new ProductReader(PRODUCTS_FILE);
         HashMap<SupermarketProduct, Number> products = reader.readAllProducts();
         for (Map.Entry<SupermarketProduct, Number> prodRecord : products.entrySet()) {
-            m_supermarket.addProduct(prodRecord.getKey(), prodRecord.getValue());
+            supermarket.addProduct(prodRecord.getKey(), prodRecord.getValue());
         }
 
-        Logger.Message(START_DATE, "Supermarket products have been formed:");
-
-        if (m_supermarket.isEmpty()) {
-            Logger.Message(START_DATE, "Supermarket is empty");
-            return;
-        }
-
-        for (Map.Entry<SupermarketProduct, Number> product : m_supermarket.getProductsInfo()) {
-            Logger.Product(product.getKey(), product.getValue());
-        }
+        Logger.message(START_DATE, Logger.PRODUCTS_FORMED);
+        Logger.supermarket(supermarket);
     }
 
     private static void createActions() {
-        m_timeline = new ActionsTimeline();
+        timeline = new ActionsTimeline();
         int customersCount = Rand.getInt(MAX_CUSTOMERS_COUNT);
 
         for (Integer i = 1; i <= customersCount; ++i) {
-            String name = "Customer #" + i;
+            final String name = CUSTOMER_NAME_PATTERN + i;
             Customer customer = new Customer(name);
-            int actionsCount = Rand.getInt(MIN_ACTIONS_COUNT, MAX_ACTIONS_COUNT);
-            int[] actionTimes = Rand.getInt(0, m_workTime, actionsCount);
+            final int actionsCount = Rand.getInt(MIN_ACTIONS_COUNT, MAX_ACTIONS_COUNT);
+            List<Integer> acts = Rand.getIntList(MIN_ACTION_PAUSE, workTime, actionsCount);
+            boolean isArrive = false;
+            int actNumber = 1;
 
-            for (int j = 0; j < actionTimes.length; ++j) {
-                Date time = new Date(actionTimes[j] + START_DATE.getTime());
+            for (Integer actTime : acts) {
+                Date time = new Date(actTime + START_DATE.getTime());
                 ActionType action = ActionType.TAKE_PRODUCT;
-                if (j == 0) {
+                if (!isArrive) {
                     action = ActionType.ARRIVE;
-                } else if (j == actionTimes.length - 1) {
+                    isArrive = true;
+                } else if (actNumber == acts.size()) {
                     action = ActionType.PAID;
                 }
-                m_timeline.addAction(time, customer, action);
+                timeline.addAction(time, customer, action);
+                ++actNumber;
             }
         }
     }
 
     private static void enterSimulate() {
-        if (m_supermarket.isEmpty()) {
-            Logger.Message(START_DATE, "The supermarket was not open because it is empty");
+        if (supermarket.isEmpty()) {
+            Logger.message(START_DATE, Logger.EMPTY_AT_START);
             return;
         }
+        Logger.message(START_DATE, Logger.OPEN);
 
-        Logger.Message(START_DATE, "Supermarket is opened");
-
-        for (Map.Entry<Date, ArrayList<Pair<Customer, ActionType>>> plansAtTime : m_timeline.entrySet()) {
+        for (Map.Entry<Date, ArrayList<Pair<Customer, ActionType>>> plansAtTime : timeline.entrySet()) {
             for (Pair<Customer, ActionType> plan : plansAtTime.getValue()) {
                 Date currDate = plansAtTime.getKey();
                 Customer customer = plan.getKey();
@@ -121,38 +128,51 @@ class SupermarketSimulator {
                         break;
                 }
 
-                if (m_supermarket.isEmpty()) {
-                    Logger.Message(currDate, "The supermarket closed because the products ended");
+                if (supermarket.isEmpty()) {
+                    Logger.message(currDate, Logger.PRODUCTS_ENDED);
                     return;
                 }
             }
         }
 
-        Date closeDate = new Date(m_workTime + START_DATE.getTime());
-        Logger.Message(closeDate, "The work day of the supermarket ended");
+        Date closeDate = new Date(workTime + START_DATE.getTime());
+        Logger.message(closeDate, Logger.END_OF_DAY);
     }
 
     private static void processArrive(Date date, Customer customer) {
-        Logger.CustomerArrived(date, customer.getName());
+        Logger.customerArrived(date, customer.getName());
     }
 
     private static void processTake(Date date, Customer customer) {
-        Set<SupermarketProduct> prods = m_supermarket.getProductsSet();
-        Logger.TakeProduct(date, customer.getName(), prods.iterator().next(), 12);
+        Basket superBasket = supermarket.getBasket();
+        Pair<SupermarketProduct, Number> takingProducts;
+
+        if ((takingProducts = customer.takeRandProduct(superBasket)) == null) {
+            return;
+        }
+
+        String customerName = customer.getName();
+        Product product = takingProducts.getKey();
+        Number amount = takingProducts.getValue();
+
+        Logger.takeProduct(date, customerName, product, amount);
     }
 
     private static void processPaid(Date date, Customer customer) {
-        /*
-        Set<SupermarketProduct> productsSet = m_supermarket.getProductsSet();
-        Basket basket = customer.selectProducts(productsSet);
-        Logger.Basket(date, basket);
-        Bill bill = m_supermarket.buy(
-                basket,
-                customer.getType(),
-                customer.getPayType(),
-                customer.getMoney(),
-                date
-        );
-        Logger.Bill(date, bill);*/
+        Basket basket = customer.getBasket();
+        if (basket.getSize() == 0) {
+            Logger.customerLeave(date, customer.getName());
+            return;
+        }
+
+        Logger.atCashDesk(date, customer, basket);
+        Bill bill = supermarket.buy(basket, customer, date);
+
+        Logger.afterPaid(date, customer, bill);
+        Logger.customerLeave(date, customer.getName());
+    }
+
+    private static void writeReport() {
+
     }
 }

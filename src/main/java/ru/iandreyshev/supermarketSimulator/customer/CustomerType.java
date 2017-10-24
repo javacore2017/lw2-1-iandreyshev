@@ -1,4 +1,4 @@
-package ru.iandreyshev.supermarketSimulator;
+package ru.iandreyshev.supermarketSimulator.customer;
 
 public enum CustomerType {
     CHILD,

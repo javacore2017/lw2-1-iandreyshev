@@ -1,4 +1,4 @@
-package ru.iandreyshev.supermarketSimulator;
+package ru.iandreyshev.supermarketSimulator.product;
 
 import javafx.util.Pair;
 
@@ -7,32 +7,18 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.InvalidPropertiesFormatException;
 
 public class ProductReader {
-    public ProductReader() {}
-
-    public ProductReader(String file) {
-        open(file);
-    }
-
-    public void open(String file) {
-        m_isOpen = false;
-        try {
-            m_fReader = new FileReader(file);
-            m_bReader = new BufferedReader(m_fReader);
-        } catch (FileNotFoundException e) {
-            return;
-        }
-        m_isOpen = true;
+    public ProductReader(String file) throws FileNotFoundException {
+        bufferedReader = new BufferedReader(new FileReader(file));
     }
 
     public HashMap<SupermarketProduct, Number> readAllProducts() throws IOException {
         HashMap<SupermarketProduct, Number> result = new HashMap<>();
         String record;
 
-        while ((record = m_bReader.readLine()) != null) {
+        while ((record = bufferedReader.readLine()) != null) {
             if (isCommentLine(record)) {
                 continue;
             }
@@ -50,17 +36,11 @@ public class ProductReader {
         return result;
     }
 
-    public boolean isOpen() {
-        return m_isOpen;
-    }
-
     private static final int PRODUCT_FIELDS_COUNT = 6;
     private static final String DELIMITER = ";";
     private static final char COMMENT_SYMBOL = '#';
 
-    private boolean m_isOpen;
-    private FileReader m_fReader;
-    private BufferedReader m_bReader;
+    private BufferedReader bufferedReader;
 
     private Pair<SupermarketProduct, Number> createProduct(String[] fields) {
         String name = fields[0];

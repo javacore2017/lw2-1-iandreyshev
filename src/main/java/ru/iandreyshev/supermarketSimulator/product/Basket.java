@@ -1,13 +1,12 @@
-package ru.iandreyshev.supermarketSimulator;
+package ru.iandreyshev.supermarketSimulator.product;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import ru.iandreyshev.supermarketSimulator.util.Util;
+
+import java.util.*;
 
 public class Basket {
     public void add(SupermarketProduct product, Number amount) {
-        Number currAmount = m_container.getOrDefault(product, 0);
+        Number currAmount = container.getOrDefault(product, 0);
         Number newAmount = 0;
 
         switch (product.getType()) {
@@ -19,18 +18,18 @@ public class Basket {
                 break;
         }
 
-        m_container.put(product, newAmount);
-        m_sumCost += Util.calcCost(product.getType(), product.getCost(), amount);
+        container.put(product, newAmount);
+        sumCost += Util.multiplication(product.getType(), product.getCost(), amount);
     }
 
     public Number remove(SupermarketProduct product, Number amount) {
-        if (!m_container.containsKey(product)) {
+        if (!container.containsKey(product)) {
             return 0;
         }
 
         Number removedAmount = 0;
         Number newAmount = 0;
-        Number currAmount = m_container.getOrDefault(product, 0);
+        Number currAmount = container.getOrDefault(product, 0);
 
         switch (product.getType()) {
             case COUNT:
@@ -47,36 +46,32 @@ public class Basket {
                 break;
         }
 
-        m_container.put(product, newAmount);
-        m_sumCost -= Util.calcCost(product.getType(), product.getCost(), removedAmount);
+        container.put(product, newAmount);
+        sumCost -= Util.multiplication(product.getType(), product.getCost(), removedAmount);
         return removedAmount;
     }
 
     public long getSumCost() {
-        return m_sumCost;
+        return sumCost;
     }
 
     public int getSize() {
-        return m_container.size();
+        return container.size();
     }
 
-    public Set<Map.Entry<SupermarketProduct, Number>> getProductsInfo() {
-        return m_container.entrySet();
+    public HashMap<SupermarketProduct, Number> getProducts() {
+        return container;
     }
 
-    public Set<SupermarketProduct> getProductsSet() {
-        return m_container.keySet();
-    }
-
-    public boolean isContain(Product product) {
-        return m_container.containsKey(product);
+    public Set<Map.Entry<SupermarketProduct, Number>> entrySet() {
+        return getProducts().entrySet();
     }
 
     public void clear() {
-        m_container = new HashMap<>();
-        m_sumCost = 0L;
+        container = new HashMap<>();
+        sumCost = 0L;
     }
 
-    private HashMap<SupermarketProduct, Number> m_container = new HashMap<>();
-    private long m_sumCost;
+    private HashMap<SupermarketProduct, Number> container = new HashMap<>();
+    private long sumCost;
 }

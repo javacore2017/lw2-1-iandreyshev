@@ -1,10 +1,10 @@
-package ru.iandreyshev.supermarketSimulator;
+package ru.iandreyshev.supermarketSimulator.action;
 
 import javafx.util.Pair;
+import ru.iandreyshev.supermarketSimulator.customer.Customer;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Map;
 import java.util.TreeMap;
 
 public class ActionsTimeline extends TreeMap<Date, ArrayList<Pair<Customer, ActionType>>> {
