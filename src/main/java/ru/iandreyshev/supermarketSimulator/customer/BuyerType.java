@@ -1,6 +1,6 @@
 package ru.iandreyshev.supermarketSimulator.customer;
 
-public enum CustomerType {
+public enum BuyerType {
     CHILD,
     ADULT,
     RETIRED,

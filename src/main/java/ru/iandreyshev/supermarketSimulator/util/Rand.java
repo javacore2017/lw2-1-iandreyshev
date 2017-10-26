@@ -17,15 +17,6 @@ public class Rand {
         return getRand().nextInt(bound) + min;
     }
 
-    public static List<Integer> getIntList(int min, int max, int count) {
-        List<Integer> result = new ArrayList<>();
-        for (int i = 0; i < count; ++i) {
-            result.add(getInt(min, max));
-        }
-        Collections.sort(result);
-        return result;
-    }
-
     public static float getFloat(float max) {
         return getRand().nextFloat() * max;
     }
@@ -39,7 +30,7 @@ public class Rand {
         return new Random(currTime + rndOffset);
     }
 
-    private static final int ANTI_DUPLICATE_OFFSET = 773;
+    private static final int ANTI_DUPLICATE_OFFSET = 23;
 
     private static int rndOffset = 0;
 }

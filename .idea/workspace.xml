@@ -5,33 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c66ff29e-e3b4-4939-abfd-c4ecec3a0801" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/bill/Bill.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/customer/Customer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/supermarket/CashDesk.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/supermarket/Supermarket.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/util/Logger.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/util/Rand.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/Bill.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/CashDesk.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/Customer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/DiscountType.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/Supermarket.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/SupermarketProduct.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/util/Logger.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/util/Rand.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/ru/iandreyshev/supermarketSimulator/busketTest/BusketTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/action/ActionType.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/action/ActionsTimeline.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/products.csv" afterPath="$PROJECT_DIR$/resources/products.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/SupermarketSimulator.java" afterPath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/SupermarketSimulator.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/ActionType.java" afterPath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/action/ActionType.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/ActionsTimeline.java" afterPath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/action/ActionsTimeline.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/Basket.java" afterPath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/product/Basket.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/CustomerType.java" afterPath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/customer/CustomerType.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/PaymentType.java" afterPath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/customer/PaymentType.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/Product.java" afterPath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/product/Product.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/ProductReader.java" afterPath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/product/ProductReader.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/ProductType.java" afterPath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/product/ProductType.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/Util.java" afterPath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/util/Util.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/bill/Bill.java" afterPath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/bill/Bill.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/customer/Customer.java" afterPath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/customer/Customer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/customer/PaymentType.java" afterPath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/customer/PaymentType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/product/Basket.java" afterPath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/product/Basket.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/supermarket/CashDesk.java" afterPath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/supermarket/CashDesk.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/supermarket/Supermarket.java" afterPath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/supermarket/Supermarket.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/util/Logger.java" afterPath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/util/Logger.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/util/Rand.java" afterPath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/util/Rand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/util/Util.java" afterPath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/util/Util.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/customer/CustomerType.java" afterPath="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/customer/BuyerType.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,8 +29,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/lw2_1_iandreyshev$SupermarketSimulator.coverage" NAME="SupermarketSimulator Coverage Results" MODIFIED="1508135883506" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>ru.iandreyshev.supermarketSimulator.*</FILTER>
+    <SUITE FILE_PATH="coverage/lw2_1_iandreyshev$SupermarketSimulator.coverage" NAME="SupermarketSimulator Coverage Results" MODIFIED="1508927601161" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ru.iandreyshev.supermarketSimulator.busketTest.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/lw2_1_iandreyshev$SupermarketSimulatorTest.coverage" NAME="SupermarketSimulatorTest Coverage Results" MODIFIED="1508136267659" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
@@ -55,68 +43,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SupermarketSimulator.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SupermarketSimulator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/SupermarketSimulator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="86">
-              <caret line="171" column="0" lean-forward="false" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
+            <state relative-caret-position="247">
+              <caret line="125" column="19" lean-forward="true" selection-start-line="125" selection-start-column="19" selection-end-line="125" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="products.csv" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/products.csv">
+      <file leaf-file-name="Logger.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/util/Logger.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="29" column="42" lean-forward="false" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomerActionType.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/customer/CustomerActionType.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="63">
-              <caret line="3" column="24" lean-forward="true" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Bill.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/bill/Bill.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="18" column="38" lean-forward="false" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#addDiscount#0;class#Bill#0" expanded="false" />
-                <element signature="method#getCost#0;class#Bill#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Rand.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/util/Rand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SupermarketProduct.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/product/SupermarketProduct.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-              <folding>
-                <element signature="e#380#381#0" expanded="true" />
-                <element signature="e#408#409#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Util.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/util/Util.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="12" column="36" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="36" />
+              <caret line="3" column="9" lean-forward="true" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -125,37 +76,11 @@
       <file leaf-file-name="Supermarket.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/supermarket/Supermarket.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="49" column="5" lean-forward="true" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+            <state relative-caret-position="373">
+              <caret line="51" column="33" lean-forward="false" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="33" />
               <folding>
-                <element signature="e#2013#2014#0" expanded="true" />
-                <element signature="e#2059#2060#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Basket.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/product/Basket.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1197">
-              <caret line="63" column="5" lean-forward="true" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
-              <folding>
-                <element signature="method#clear#0;class#Basket#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Customer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/customer/Customer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="67" column="24" lean-forward="false" selection-start-line="67" selection-start-column="16" selection-end-line="67" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2020#2021#0" expanded="true" />
-                <element signature="e#2050#2051#0" expanded="true" />
+                <element signature="e#1963#1964#0" expanded="true" />
+                <element signature="e#1996#1997#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -164,9 +89,69 @@
       <file leaf-file-name="CashDesk.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/supermarket/CashDesk.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+            <state relative-caret-position="294">
+              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IBuyer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/customer/IBuyer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Rand.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/util/Rand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="27" column="43" lean-forward="false" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SupermarketProduct.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/product/SupermarketProduct.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding>
+                <element signature="e#347#348#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Basket.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/product/Basket.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1134">
+              <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Customer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/customer/Customer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="56" column="5" lean-forward="true" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
+              <folding>
+                <element signature="method#Customer#0;class#Customer#0" expanded="false" />
+                <element signature="method#takeRandProduct#0;class#Customer#0" expanded="false" />
+                <element signature="e#1913#1914#0" expanded="true" />
+                <element signature="e#1950#1951#0" expanded="true" />
+                <element signature="e#1984#1985#0" expanded="true" />
+                <element signature="e#2011#2012#0" expanded="true" />
+                <element signature="method#getMoney#0;class#Customer#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -182,6 +167,20 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>picke</find>
+      <find>58</find>
+      <find>#58</find>
+      <find>picked</find>
+      <find>#166</find>
+      <find>customer #6</find>
+      <find>Customer #5</find>
+      <find>clearBasket</find>
+      <find>pick</find>
+      <find>#9</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -193,10 +192,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/ru/iadnreyshev/util/StringToolTest.java" />
-        <option value="$PROJECT_DIR$/src/test/ru/iandreyshev/util/StringToolTest.java" />
-        <option value="$PROJECT_DIR$/src/test/ru/iandreyshev/supermarketSimulator/SupermarketSimulatorTest.java" />
-        <option value="$PROJECT_DIR$/src/test/ru/iandreyshev/supermarketSimulator/BusketTest.java" />
         <option value="$PROJECT_DIR$/src/test/ru/iandreyshev/supermarketSimulator/busketTest/BusketTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/CustomerType.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/ProductType.java" />
@@ -230,20 +225,24 @@
         <option value="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/product/Product.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/product/ProductReader.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/bill/BillRecord.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/customer/CustomerType.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/customer/PaymentType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/util/Rand.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/supermarket/DiscountType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/util/Logger.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/SupermarketSimulator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/supermarket/CashDesk.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/util/Util.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/product/SupermarketProduct.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/customer/Customer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/supermarket/Supermarket.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/bill/Bill.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/product/Basket.java" />
         <option value="$PROJECT_DIR$/resources/products.csv" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/customer/CustomerType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/customer/BuyerType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/customer/CustomerAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/product/Basket.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/util/Util.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/util/Rand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/customer/CustomerActionType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/customer/Customer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/customer/IBuyer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/supermarket/CashDesk.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/util/Logger.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/supermarket/Supermarket.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/SupermarketSimulator.java" />
       </list>
     </option>
   </component>
@@ -252,6 +251,28 @@
     <option name="y" value="5" />
     <option name="width" value="1346" />
     <option name="height" value="683" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Declaration redundancyJava</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>UnnecessaryModuleDependencyInspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -271,6 +292,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -281,11 +304,6 @@
             <path>
               <item name="lw2-1-iandreyshev" type="b2602c69:ProjectViewProjectNode" />
               <item name="lw2-1-iandreyshev" type="72ca9032:PsiDirectoryNodeCustom" />
-              <item name="resources" type="72ca9032:PsiDirectoryNodeCustom" />
-            </path>
-            <path>
-              <item name="lw2-1-iandreyshev" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lw2-1-iandreyshev" type="72ca9032:PsiDirectoryNodeCustom" />
               <item name="src" type="72ca9032:PsiDirectoryNodeCustom" />
             </path>
             <path>
@@ -308,42 +326,6 @@
               <item name="main" type="72ca9032:PsiDirectoryNodeCustom" />
               <item name="java" type="72ca9032:PsiDirectoryNodeCustom" />
               <item name="supermarketSimulator" type="72ca9032:PsiDirectoryNodeCustom" />
-            </path>
-            <path>
-              <item name="lw2-1-iandreyshev" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lw2-1-iandreyshev" type="72ca9032:PsiDirectoryNodeCustom" />
-              <item name="src" type="72ca9032:PsiDirectoryNodeCustom" />
-              <item name="main" type="72ca9032:PsiDirectoryNodeCustom" />
-              <item name="java" type="72ca9032:PsiDirectoryNodeCustom" />
-              <item name="supermarketSimulator" type="72ca9032:PsiDirectoryNodeCustom" />
-              <item name="action" type="72ca9032:PsiDirectoryNodeCustom" />
-            </path>
-            <path>
-              <item name="lw2-1-iandreyshev" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lw2-1-iandreyshev" type="72ca9032:PsiDirectoryNodeCustom" />
-              <item name="src" type="72ca9032:PsiDirectoryNodeCustom" />
-              <item name="main" type="72ca9032:PsiDirectoryNodeCustom" />
-              <item name="java" type="72ca9032:PsiDirectoryNodeCustom" />
-              <item name="supermarketSimulator" type="72ca9032:PsiDirectoryNodeCustom" />
-              <item name="bill" type="72ca9032:PsiDirectoryNodeCustom" />
-            </path>
-            <path>
-              <item name="lw2-1-iandreyshev" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lw2-1-iandreyshev" type="72ca9032:PsiDirectoryNodeCustom" />
-              <item name="src" type="72ca9032:PsiDirectoryNodeCustom" />
-              <item name="main" type="72ca9032:PsiDirectoryNodeCustom" />
-              <item name="java" type="72ca9032:PsiDirectoryNodeCustom" />
-              <item name="supermarketSimulator" type="72ca9032:PsiDirectoryNodeCustom" />
-              <item name="customer" type="72ca9032:PsiDirectoryNodeCustom" />
-            </path>
-            <path>
-              <item name="lw2-1-iandreyshev" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lw2-1-iandreyshev" type="72ca9032:PsiDirectoryNodeCustom" />
-              <item name="src" type="72ca9032:PsiDirectoryNodeCustom" />
-              <item name="main" type="72ca9032:PsiDirectoryNodeCustom" />
-              <item name="java" type="72ca9032:PsiDirectoryNodeCustom" />
-              <item name="supermarketSimulator" type="72ca9032:PsiDirectoryNodeCustom" />
-              <item name="product" type="72ca9032:PsiDirectoryNodeCustom" />
             </path>
             <path>
               <item name="lw2-1-iandreyshev" type="b2602c69:ProjectViewProjectNode" />
@@ -368,9 +350,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -416,7 +396,7 @@
       </extension>
       <option name="MAIN_CLASS_NAME" value="ru.iandreyshev.supermarketSimulator.SupermarketSimulator" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="1000000 &gt; out.txt" />
+      <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -425,27 +405,6 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="lw2-1-iandreyshev" />
       <envs />
-    </configuration>
-    <configuration name="SupermarketSimulatorTest" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" per_test_coverage_enabled="false" sample_coverage="true" runner="idea" />
-      <module name="lw2-1-iandreyshev" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <dir value="$PROJECT_DIR$/src/test" />
-      <patterns />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
@@ -528,10 +487,6 @@
       <properties />
       <listeners />
     </configuration>
-    <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.SupermarketSimulatorTest" />
-      <item index="1" class="java.lang.String" itemvalue="Application.SupermarketSimulator" />
-    </list>
     <recent_temporary>
       <list size="1">
         <item index="0" class="java.lang.String" itemvalue="Application.SupermarketSimulator" />
@@ -595,20 +550,19 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="true" show_stripe_button="true" weight="0.3296355" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-97" y="513" width="1366" height="208" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.45958796" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="-97" y="513" width="1366" height="208" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2489019" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2591508" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Learn" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5150555" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5150555" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Armory" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -616,7 +570,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19838946" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -626,49 +582,36 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/SupermarketSimulator.java</url>
-          <line>171</line>
+          <url>file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/product/Basket.java</url>
+          <line>28</line>
           <properties />
-          <option name="timeStamp" value="35" />
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/customer/Customer.java</url>
+          <line>45</line>
+          <properties />
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/product/Basket.java</url>
+          <line>55</line>
+          <properties />
+          <option name="timeStamp" value="46" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="36" />
+      <option name="time" value="48" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/SupermarketSimulator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/products.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/supermarket/Supermarket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="40" lean-forward="false" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
-          <folding>
-            <element signature="e#2013#2014#0" expanded="true" />
-            <element signature="e#2059#2060#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/product/SupermarketProduct.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="25" column="30" lean-forward="false" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
-          <folding />
+          <folding>
+            <element signature="e#347#348#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -676,7 +619,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="93" lean-forward="false" selection-start-line="5" selection-start-column="93" selection-end-line="5" selection-end-column="93" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -684,7 +626,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -693,15 +634,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="35" column="5" lean-forward="false" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="method#Customer#0;class#Customer#0" expanded="false" />
+            <element signature="method#takeRandProduct#0;class#Customer#0" expanded="false" />
+            <element signature="e#1913#1914#0" expanded="true" />
+            <element signature="e#1950#1951#0" expanded="true" />
+            <element signature="e#1984#1985#0" expanded="true" />
+            <element signature="e#2011#2012#0" expanded="true" />
+            <element signature="method#getMoney#0;class#Customer#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/customer/CustomerType.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/customer/BuyerType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -717,7 +665,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="93" lean-forward="false" selection-start-line="5" selection-start-column="93" selection-end-line="5" selection-end-column="93" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -725,7 +672,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -742,29 +688,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="method#Customer#0;class#Customer#0" expanded="false" />
+            <element signature="method#takeRandProduct#0;class#Customer#0" expanded="false" />
+            <element signature="e#1913#1914#0" expanded="true" />
+            <element signature="e#1950#1951#0" expanded="true" />
+            <element signature="e#1984#1985#0" expanded="true" />
+            <element signature="e#2011#2012#0" expanded="true" />
+            <element signature="method#getMoney#0;class#Customer#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/action/ActionType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="8" lean-forward="false" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/action/ActionsTimeline.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/customer/CustomerType.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/action/ActionType.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/action/ActionsTimeline.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/customer/BuyerType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -773,8 +714,8 @@
         <state relative-caret-position="340">
           <caret line="20" column="56" lean-forward="true" selection-start-line="20" selection-start-column="56" selection-end-line="20" selection-end-column="56" />
           <folding>
-            <element signature="e#2013#2014#0" expanded="true" />
-            <element signature="e#2059#2060#0" expanded="true" />
+            <element signature="e#1963#1964#0" expanded="true" />
+            <element signature="e#1996#1997#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -792,8 +733,8 @@
         <state relative-caret-position="153">
           <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
           <folding>
-            <element signature="e#2013#2014#0" expanded="true" />
-            <element signature="e#2059#2060#0" expanded="true" />
+            <element signature="e#1963#1964#0" expanded="true" />
+            <element signature="e#1996#1997#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -828,44 +769,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/ru/iandreyshev/supermarketSimulator/busketTest/BusketTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="12" column="37" lean-forward="true" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/ru/iandreyshev/supermarketSimulator/busketTest/BusketTest.java" />
     <entry file="file://$PROJECT_DIR$/src/test/ru/iandreyshev/supermarketSimulator/SupermarketSimulatorTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/ru/iandreyshev/supermarketSimulator/busketTest/BusketTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/ru/iandreyshev/supermarketSimulator/busketTest/BusketTest.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/util/Convert.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/ProductContainer.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/product/Product.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/action/ActionType.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/action/ActionsTimeline.java" />
+    <entry file="file://$PROJECT_DIR$/resources/products.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="63">
+          <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/product/ProductReader.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/bill/Bill.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/product/ProductType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-          <folding />
+        <state relative-caret-position="231">
+          <caret line="18" column="38" lean-forward="false" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -873,33 +794,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/action/ActionType.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/customer/BuyerType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/action/ActionsTimeline.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="10" lean-forward="false" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/customer/CustomerType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-          <folding />
+        <state relative-caret-position="126">
+          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -907,129 +808,145 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
           <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/product/ProductReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/product/ProductType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/supermarket/DiscountType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="42">
+          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/production/lw2-1-iandreyshev/products.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/util/Logger.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/product/Product.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="25" column="47" lean-forward="false" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="47" />
+        <state relative-caret-position="336">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
-            <element signature="method#message#0;class#Logger#0" expanded="false" />
-            <element signature="method#product#0;class#Logger#0" expanded="false" />
-            <element signature="method#supermarket#0;class#Logger#0" expanded="false" />
-            <element signature="method#takeProduct#0;class#Logger#0" expanded="false" />
-            <element signature="method#customerArrived#0;class#Logger#0" expanded="false" />
-            <element signature="method#customerLeave#0;class#Logger#0" expanded="false" />
-            <element signature="method#atCashDesk#0;class#Logger#0" expanded="false" />
-            <element signature="method#afterPaid#0;class#Logger#0" expanded="false" />
-            <element signature="method#toStr#0;class#Logger#0" expanded="false" />
-            <element signature="method#toStr#1;class#Logger#0" expanded="false" />
+            <element signature="e#459#460#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/supermarket/CashDesk.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/util/Util.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="36" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="36" />
+        <state relative-caret-position="525">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/util/Rand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="27" column="43" lean-forward="false" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/product/Basket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1134">
+          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/product/SupermarketProduct.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#347#348#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/customer/CustomerActionType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="9" lean-forward="true" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/customer/IBuyer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/customer/Customer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="67" column="24" lean-forward="false" selection-start-line="67" selection-start-column="16" selection-end-line="67" selection-end-column="24" />
+        <state relative-caret-position="315">
+          <caret line="56" column="5" lean-forward="true" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2020#2021#0" expanded="true" />
-            <element signature="e#2050#2051#0" expanded="true" />
+            <element signature="method#Customer#0;class#Customer#0" expanded="false" />
+            <element signature="method#takeRandProduct#0;class#Customer#0" expanded="false" />
+            <element signature="e#1913#1914#0" expanded="true" />
+            <element signature="e#1950#1951#0" expanded="true" />
+            <element signature="e#1984#1985#0" expanded="true" />
+            <element signature="e#2011#2012#0" expanded="true" />
+            <element signature="method#getMoney#0;class#Customer#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/product/SupermarketProduct.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/supermarket/CashDesk.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding>
-            <element signature="e#380#381#0" expanded="true" />
-            <element signature="e#408#409#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="294">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/util/Logger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="29" column="42" lean-forward="false" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="42" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/supermarket/Supermarket.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="49" column="5" lean-forward="true" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+        <state relative-caret-position="373">
+          <caret line="51" column="33" lean-forward="false" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="33" />
           <folding>
-            <element signature="e#2013#2014#0" expanded="true" />
-            <element signature="e#2059#2060#0" expanded="true" />
+            <element signature="e#1963#1964#0" expanded="true" />
+            <element signature="e#1996#1997#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/bill/Bill.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="18" column="38" lean-forward="false" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#addDiscount#0;class#Bill#0" expanded="false" />
-            <element signature="method#getCost#0;class#Bill#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/product/Basket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1197">
-          <caret line="63" column="5" lean-forward="true" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
-          <folding>
-            <element signature="method#clear#0;class#Basket#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/util/Rand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/iandreyshev/supermarketSimulator/SupermarketSimulator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="171" column="0" lean-forward="false" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/products.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="24" lean-forward="true" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+        <state relative-caret-position="247">
+          <caret line="125" column="19" lean-forward="true" selection-start-line="125" selection-start-column="19" selection-end-line="125" selection-end-column="19" />
           <folding />
         </state>
       </provider>

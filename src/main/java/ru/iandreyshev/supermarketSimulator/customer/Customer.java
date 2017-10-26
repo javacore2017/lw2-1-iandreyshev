@@ -10,50 +10,49 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class Customer {
+public class Customer implements IBuyer {
     public Customer(String name) {
+        this.name = name;
         money = Rand.getInt(MAX_MONEY_COUNT);
+        bonus = Rand.getInt(MAX_MONEY_COUNT);
 
-        int randType = Rand.getInt(CustomerType.values().length - 1);
-        type = CustomerType.values()[randType];
+        int randType = Rand.getInt(BuyerType.values().length - 1);
+        type = BuyerType.values()[randType];
 
         int randPayType = Rand.getInt(PaymentType.values().length - 1);
         payType = PaymentType.values()[randPayType];
-
-        this.name = name;
+        resetBasket();
     }
 
-    public Pair<SupermarketProduct, Number> takeRandProduct(Basket basket) {
-        if (basket.getSize() == 0) {
+    public Pair<SupermarketProduct, Number> takeRandProduct(Basket basketToTake) {
+        if (basketToTake.getSize() == 0) {
             return null;
         }
-
-        HashMap<SupermarketProduct, Number> basketContent = basket.getProducts();
+        HashMap<SupermarketProduct, Number> basketContent = basketToTake.getProducts();
         List<SupermarketProduct> products = new ArrayList<>(basketContent.keySet());
-
         int maxIndex = products.size() - 1;
         int randIndex = Rand.getInt(maxIndex);
-
         SupermarketProduct newProduct = products.get(randIndex);
-        float takingAmount = Rand.getFloat(MAX_AMOUNT);
-        Number amount = Util.toAmount(newProduct.getType(), takingAmount);
+        Number amount = Util.toAmount(newProduct.getType(), Rand.getFloat(MAX_AMOUNT));
 
         if (amount.floatValue() == 0) {
             return null;
         }
+        int cost = Util.multiplicate(newProduct.getType(), newProduct.getCost(), amount);
 
-        int cost = Util.multiplication(newProduct.getType(), newProduct.getCost(), amount);
-        if (money - cost < this.basket.getSumCost()) {
+        if (getMoney() - cost < this.basket.getSumCost()) {
             return null;
         }
-
-        basket.remove(newProduct, amount);
-        this.basket.add(newProduct, amount);
-
-        return new Pair<>(newProduct, amount);
+        Number takingAmount = basketToTake.remove(newProduct, amount);
+        this.basket.add(newProduct, takingAmount);
+        return new Pair<>(newProduct, takingAmount);
     }
 
-    public CustomerType getType() {
+    public void resetBasket() {
+        basket = new Basket();
+    }
+
+    public BuyerType getType() {
         return type;
     }
 
@@ -61,12 +60,12 @@ public class Customer {
         return payType;
     }
 
-    public Integer getMoney() {
-        return money;
+    public int getMoney() {
+        return (payType == PaymentType.BONUS) ? bonus : money;
     }
 
     public void addBonus(int bonus) {
-        money += bonus;
+        bonus += bonus;
     }
 
     public String getName() {
@@ -77,12 +76,22 @@ public class Customer {
         return basket;
     }
 
+    public boolean isArrived() {
+        return isArrived;
+    }
+
+    public void setArrived(boolean arrived) {
+        isArrived = arrived;
+    }
+
     private static final int MAX_MONEY_COUNT = 5000;
     private static final float MAX_AMOUNT = 30;
 
+    private boolean isArrived;
     private String name;
     private int money;
-    private CustomerType type;
+    private int bonus;
+    private BuyerType type;
     private PaymentType payType;
-    private Basket basket = new Basket();
+    private Basket basket;
 }

@@ -6,6 +6,9 @@ import java.util.*;
 
 public class Basket {
     public void add(SupermarketProduct product, Number amount) {
+        if (amount == null || amount.floatValue() == 0) {
+            return;
+        }
         Number currAmount = container.getOrDefault(product, 0);
         Number newAmount = 0;
 
@@ -19,35 +22,38 @@ public class Basket {
         }
 
         container.put(product, newAmount);
-        sumCost += Util.multiplication(product.getType(), product.getCost(), amount);
+        sumCost += Util.multiplicate(product.getType(), product.getCost(), amount);
     }
 
-    public Number remove(SupermarketProduct product, Number amount) {
+    public Number remove(SupermarketProduct product, Number amountToTake) {
         if (!container.containsKey(product)) {
-            return 0;
+            return null;
         }
-
-        Number removedAmount = 0;
-        Number newAmount = 0;
-        Number currAmount = container.getOrDefault(product, 0);
-
+        Number newAmount = null;
+        Number currAmount = container.get(product);
         switch (product.getType()) {
             case COUNT:
-                if (currAmount.intValue() > amount.intValue()) {
-                    newAmount = currAmount.intValue() - amount.intValue();
-                    removedAmount = currAmount.intValue() - newAmount.intValue();
+                if (currAmount.intValue() > amountToTake.intValue()) {
+                    newAmount = currAmount.intValue() - amountToTake.intValue();
                 }
                 break;
             case MASS:
-                if (currAmount.floatValue() > amount.floatValue()) {
-                    newAmount = currAmount.floatValue() - amount.floatValue();
-                    removedAmount = currAmount.floatValue() - newAmount.floatValue();
+                if (currAmount.floatValue() > amountToTake.floatValue()) {
+                    newAmount = currAmount.floatValue() - amountToTake.floatValue();
                 }
                 break;
         }
 
-        container.put(product, newAmount);
-        sumCost -= Util.multiplication(product.getType(), product.getCost(), removedAmount);
+        Number removedAmount;
+        if (newAmount == null) {
+            removedAmount = currAmount;
+            container.remove(product);
+        } else {
+            removedAmount = amountToTake;
+            container.put(product, newAmount);
+        }
+
+        sumCost -= Util.multiplicate(product.getType(), product.getCost(), removedAmount);
         return removedAmount;
     }
 

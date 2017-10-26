@@ -16,7 +16,7 @@ public class Bill {
     }
 
     public void addProduct(SupermarketProduct product, Number amount) {
-        int cost = Util.multiplication(product.getType(), product.getCost(), amount);
+        int cost = Util.multiplicate(product.getType(), product.getCost(), amount);
         totalCost += cost;
         records.add(new BillRecord(product.getName(), cost, amount));
     }

@@ -1,4 +1,4 @@
-# [Name];[Amount type];[Cost];[Is adults only];[Amount];[Bonuses]
+# [Name] ; [Amount type] ; [Cost] ; [Is adults only] ; [Amount] ; [Bonuses]
 Potato;COUNT;25;false;50;5
 Tomato;MASS;75;false;10.55;0
 Cola;COUNT;35;true;50;10

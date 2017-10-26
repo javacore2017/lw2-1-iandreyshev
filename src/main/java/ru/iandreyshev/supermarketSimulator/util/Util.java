@@ -10,13 +10,16 @@ public class Util {
         }
         return amount;
     }
-    public static int multiplication(ProductType type, int value, Number amount) {
+    public static int multiplicate(ProductType type, int value, Number amount) {
+        int result = 0;
         switch (type) {
             case COUNT:
-                return value * amount.intValue();
+                result = value * amount.intValue();
+                break;
             case MASS:
-                return (int)(value * amount.floatValue());
+                result = (int)(value * amount.floatValue());
+                break;
         }
-        return 0;
+        return result;
     }
 }
