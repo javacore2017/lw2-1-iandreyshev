@@ -1,6 +1,10 @@
 package ru.iandreyshev.supermarketSimulator.product;
 
 public class Product {
+    private ProductType type;
+    private String name;
+    private boolean isAdultOnly;
+
     public Product(ProductType type, String name, boolean isAdultOnly) {
         this.type = type;
         this.name = name;
@@ -24,8 +28,4 @@ public class Product {
     public Boolean isAdultOnly() {
         return isAdultOnly;
     }
-
-    private ProductType type;
-    private String name;
-    private boolean isAdultOnly;
 }

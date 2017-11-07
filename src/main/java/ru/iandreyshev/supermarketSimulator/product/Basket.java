@@ -2,9 +2,13 @@ package ru.iandreyshev.supermarketSimulator.product;
 
 import ru.iandreyshev.supermarketSimulator.util.Util;
 
+import java.math.BigDecimal;
 import java.util.*;
 
 public class Basket {
+    private HashMap<SupermarketProduct, Number> container = new HashMap<>();
+    private BigDecimal sumCost = new BigDecimal(0);
+
     public void add(SupermarketProduct product, Number amount) {
         if (amount == null || amount.floatValue() == 0) {
             return;
@@ -22,7 +26,7 @@ public class Basket {
         }
 
         container.put(product, newAmount);
-        sumCost += Util.multiplicate(product.getType(), product.getCost(), amount);
+        sumCost = sumCost.add(Util.multiplicate(product.getType(), product.getCost(), amount));
     }
 
     public Number remove(SupermarketProduct product, Number amountToTake) {
@@ -53,11 +57,11 @@ public class Basket {
             container.put(product, newAmount);
         }
 
-        sumCost -= Util.multiplicate(product.getType(), product.getCost(), removedAmount);
+        sumCost = sumCost.add(Util.multiplicate(product.getType(), product.getCost(), removedAmount));
         return removedAmount;
     }
 
-    public long getSumCost() {
+    public BigDecimal getSumCost() {
         return sumCost;
     }
 
@@ -75,9 +79,6 @@ public class Basket {
 
     public void clear() {
         container = new HashMap<>();
-        sumCost = 0L;
+        sumCost = new BigDecimal(0);
     }
-
-    private HashMap<SupermarketProduct, Number> container = new HashMap<>();
-    private long sumCost;
 }

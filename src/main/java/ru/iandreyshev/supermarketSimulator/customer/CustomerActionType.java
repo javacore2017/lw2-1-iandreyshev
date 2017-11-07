@@ -4,5 +4,10 @@ public enum CustomerActionType {
     NONE,
     ARRIVE,
     TAKE,
-    PAY,
+    PAY;
+
+    @Override
+    public String toString() {
+        return super.toString().toLowerCase();
+    }
 }

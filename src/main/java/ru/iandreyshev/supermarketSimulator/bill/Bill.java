@@ -4,20 +4,32 @@ import ru.iandreyshev.supermarketSimulator.supermarket.DiscountType;
 import ru.iandreyshev.supermarketSimulator.customer.PaymentType;
 import ru.iandreyshev.supermarketSimulator.util.Util;
 import ru.iandreyshev.supermarketSimulator.product.SupermarketProduct;
+
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
 public class Bill {
+    private final float MIN_DISCOUNT = 0;
+    private final float MAX_DISCOUNT = 100;
+
+    private BigDecimal totalCost = new BigDecimal(0);
+    private float totalDiscount;
+    private Date date;
+    private PaymentType payType;
+    private Set<BillRecord> records = new HashSet<>();
+    private HashMap<DiscountType, Float> discounts = new HashMap<>();
+
     public Bill(Date date, PaymentType payType) {
         this.date = date;
         this.payType = payType;
     }
 
     public void addProduct(SupermarketProduct product, Number amount) {
-        int cost = Util.multiplicate(product.getType(), product.getCost(), amount);
-        totalCost += cost;
+        BigDecimal cost = Util.multiplicate(product.getType(), product.getCost(), amount);
+        totalCost = totalCost.add(cost);
         records.add(new BillRecord(product.getName(), cost, amount));
     }
 
@@ -32,8 +44,9 @@ public class Bill {
         discounts.put(type, value);
     }
 
-    public Integer getCost() {
-        return totalCost - ((int) (totalCost * totalDiscount / 100));
+    public BigDecimal getCost() {
+        BigDecimal costPersents = totalCost.multiply(new BigDecimal(totalDiscount));
+        return totalCost.subtract(costPersents.divide(new BigDecimal(100)));
     }
 
     public Date getDate() {
@@ -47,14 +60,4 @@ public class Bill {
     public Set<BillRecord> getRecords() {
         return records;
     }
-
-    private final float MIN_DISCOUNT = 0;
-    private final float MAX_DISCOUNT = 100;
-
-    private int totalCost;
-    private float totalDiscount;
-    private Date date;
-    private PaymentType payType;
-    private Set<BillRecord> records = new HashSet<>();
-    private HashMap<DiscountType, Float> discounts = new HashMap<>();
 }

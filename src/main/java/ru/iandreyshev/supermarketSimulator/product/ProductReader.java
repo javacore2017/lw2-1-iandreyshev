@@ -6,10 +6,17 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.InvalidPropertiesFormatException;
 
 public class ProductReader {
+    private static final int PRODUCT_FIELDS_COUNT = 6;
+    private static final String DELIMITER = ";";
+    private static final char COMMENT_SYMBOL = '#';
+
+    private BufferedReader bufferedReader;
+
     public ProductReader(String file) throws FileNotFoundException {
         bufferedReader = new BufferedReader(new FileReader(file));
     }
@@ -36,19 +43,13 @@ public class ProductReader {
         return result;
     }
 
-    private static final int PRODUCT_FIELDS_COUNT = 6;
-    private static final String DELIMITER = ";";
-    private static final char COMMENT_SYMBOL = '#';
-
-    private BufferedReader bufferedReader;
-
     private Pair<SupermarketProduct, Number> createProduct(String[] fields) {
         String name = fields[0];
         ProductType type = ProductType.valueOf(fields[1]);
-        int cost = Integer.parseUnsignedInt(fields[2]);
+        BigDecimal cost = new BigDecimal(fields[2]);
         boolean isAdultOnly = Boolean.parseBoolean(fields[3]);
         Number amount = getProductAmount(type, fields[4]);
-        Integer bonus = Integer.parseUnsignedInt(fields[5]);
+        BigDecimal bonus = new BigDecimal(fields[5]);
 
         Product product = new Product(type, name, isAdultOnly);
         return new Pair<>(new SupermarketProduct(product, cost, bonus), amount);

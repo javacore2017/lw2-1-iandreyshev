@@ -1,25 +1,27 @@
 package ru.iandreyshev.supermarketSimulator.bill;
 
+import java.math.BigDecimal;
+
 public class BillRecord {
-    public BillRecord(String productName, int totalCost, Number amount) {
-        m_productName = productName;
-        m_amount = amount;
-        m_cost = totalCost;
+    private String productName;
+    private BigDecimal cost = new BigDecimal(0);
+    private Number amount;
+
+    BillRecord(String productName, BigDecimal totalCost, Number amount) {
+        this.productName = productName;
+        this.amount = amount;
+        cost = totalCost;
     }
 
     public String getProductName() {
-        return m_productName;
+        return productName;
     }
 
-    public Integer getTotalCost() {
-        return m_cost;
+    public BigDecimal getTotalCost() {
+        return cost;
     }
 
     public Number getAmount() {
-        return m_amount;
+        return amount;
     }
-
-    private String m_productName;
-    private int m_cost;
-    private Number m_amount;
 }

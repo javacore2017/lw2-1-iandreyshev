@@ -10,12 +10,10 @@ import ru.iandreyshev.supermarketSimulator.product.SupermarketProduct;
 import java.util.Date;
 import java.util.Map;
 
-public abstract class CashDesk {
-    public abstract Bill buy(IBuyer buyer, Date date);
-
-    protected Bill createBill(IBuyer buyer, Date date) {
+class CashDesk {
+    Bill createBill(IBuyer buyer, Date date) {
         Basket basket = buyer.getBasket();
-        if (basket.getSize() == 0 || basket.getSumCost() > buyer.getMoney()) {
+        if (basket.getSize() == 0 || basket.getSumCost().compareTo(buyer.getMoney()) > 0) {
             return null;
         }
 

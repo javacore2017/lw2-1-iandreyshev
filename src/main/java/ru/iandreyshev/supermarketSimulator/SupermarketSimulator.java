@@ -16,18 +16,6 @@ import java.io.*;
 import java.util.*;
 
 class SupermarketSimulator {
-    public static void main(String[] args) {
-        try {
-            createCustomers();
-            createSupermarket();
-            enterSimulate();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            System.exit(EXIT_FAILURE);
-        }
-        System.exit(EXIT_SUCCESS);
-    }
-
     private static final Date START_DATE = new Date(1483218000000L);
     private static final int MIN_TIME_STEP = 1000 * 60; // ms * sec
     private static final int MAX_TIME_STEP = 1000 * 60 * 5; // ms * sec * min
@@ -35,11 +23,19 @@ class SupermarketSimulator {
     private static final int CUSTOMERS_COUNT = 15;
     private static final String PRODUCTS_FILE = "./resources/products.csv";
     private static final String CUSTOMER_NAME_PATTERN = "Customer #";
-    private static final int EXIT_SUCCESS = 0;
-    private static final int EXIT_FAILURE = 1;
 
     private static Supermarket supermarket;
     private static List<Customer> customers;
+
+    public static void main(String[] args) {
+        try {
+            createCustomers();
+            createSupermarket();
+            enterSimulate();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
 
     private static void createCustomers() {
         customers = new ArrayList<>();
@@ -71,7 +67,7 @@ class SupermarketSimulator {
         } else {
             result = CustomerActionType.ARRIVE;
             if (customer.isArrived()) {
-                int rand = Rand.getInt(1);
+                int rand = Rand.randInt(1);
                 result = (rand == 0) ? CustomerActionType.TAKE : CustomerActionType.PAY;
             }
         }
@@ -84,8 +80,9 @@ class SupermarketSimulator {
         Logger.open(currDate);
 
         while (currDate.getTime() < closeDate.getTime()) {
-            Customer customer = customers.get(Rand.getInt(customers.size() - 1));
-            switch (createAction(customer)) {
+            Customer customer = customers.get(Rand.randInt(customers.size() - 1));
+            CustomerActionType action = createAction(customer);
+            switch (action) {
                 case ARRIVE:
                     processArrive(currDate, customer);
                     break;
@@ -96,7 +93,7 @@ class SupermarketSimulator {
                     processPaid(currDate, customer);
                     break;
             }
-            int timeStep = Rand.getInt(MIN_TIME_STEP, MAX_TIME_STEP);
+            int timeStep = Rand.randInt(MIN_TIME_STEP, MAX_TIME_STEP);
             currDate = new Date(currDate.getTime() + timeStep);
         }
         checkCustomersAfterClose(closeDate);
@@ -147,6 +144,7 @@ class SupermarketSimulator {
             Logger.customerLeave(date, customer.getName());
             return;
         }
+
         Bill bill = supermarket.buy(customer, date);
 
         if (bill != null) {
